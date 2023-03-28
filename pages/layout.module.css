@@ -1,0 +1,33 @@
+.heroContainer {
+	position: absolute;
+	width: 100%;
+	height: 60vh;
+    transition: 1000ms;
+}
+
+.heroImage {
+	object-fit: cover;
+	object-position: center center;
+}
+
+.maggy {
+    position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	color: white;
+	font-size: 5rem;
+}
+
+.show {
+    opacity: 1;
+    /* position:static; */
+    transition-delay: 1000ms;
+}
+
+.hide {
+    opacity: 0;
+    /* position: absolute; */
+}
+
+
