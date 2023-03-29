@@ -9,6 +9,15 @@ const Navbar = () => {
 
 	const positionClass = route.pathname === '/' ? styles.low : styles.top
 
+	const copyContent = async () => {
+		try {
+		  await navigator.clipboard.writeText('wyrsch.m@gmail.com');
+		  console.log('Content copied to clipboard');
+		} catch (err) {
+		  console.error('Failed to copy: ', err);
+		}
+	  }
+
 	return (
 		<nav className={styles.navbar}>
 			<div className={`${positionClass} ${styles.movingElements}`}>
@@ -22,17 +31,22 @@ const Navbar = () => {
 					<Link href="/about">About</Link>
 				</div>
 				<div className={`${styles.contactLinks}`}>
-					<button>
-						<Icon icon="mdi:gmail" width={50} />
-					</button>
-					<button>
-						<Icon icon="ic:baseline-facebook" width={50} />
-					</button>
+					<div className={styles.gmail} onClick={copyContent}>
+						<Icon icon="mdi:gmail" width={40} />
+						<div className={styles.gmailTooltip}>
+							wyrsch.m@gmail.com
+							<br />
+							(Click to copy)
+						</div>
+					</div>
+					<Link className={styles.facebook} href="https://www.facebook.com/people/Margrith-Wyrsch-sur-toile/100063294335389/?locale=fr_FR">
+						<Icon icon="ic:baseline-facebook" width={40} />
+					</Link>
 				</div>
 			</div>
 			<div className={styles.languages}>
-				<button>FR</button>
-				<button>EN</button>
+				<div>FR</div>
+				<div>EN</div>
 			</div>
 		</nav>
 	)

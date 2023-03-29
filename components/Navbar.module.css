@@ -2,13 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
+    padding: 10px;
 }
 
 .movingElements {
     position: relative;
     z-index: 1;
-    top: 0vh;
     transition: 1000ms ease-in-out;
     width: 100%;
     display: flex;
@@ -17,20 +16,22 @@
 }
 
 .low {
-    top: calc(60vh + 50px); /* Hero is 60vh, Navbar is 50px */
+    top: calc(60vh + 50px + 20px); /* Hero is 60vh, Navbar is 50px, extra 20px */
 }
 
 .top {
     top: 0;
-    transition-delay: 1000ms;
+    transition-delay: 300ms;
 }
 
 .navLinks{
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: flex;
-    gap: 40px;
+    justify-content: space-between;
     align-items: center;
     margin-left: 20px;
+    margin-right: 40px;
+    width: 100%;
 }
 
 .navLinks>* { 
@@ -43,8 +44,25 @@
 
 .contactLinks {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 30px;
 }
+
+.contactLinks > * {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.contactLinks > *:hover {
+    background-color: rgb(86, 86, 86);
+}
+
+
+
 
 .languages {
     display: flex;
@@ -59,3 +77,27 @@
     height: 40px;
     font-size: 2rem;
 }
+
+
+
+
+.gmailTooltip{
+    visibility: hidden;
+    top: -150%;
+    left: -160%;
+    background-color: rgb(29, 29, 29);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    /* display: none; */
+    position: absolute;
+}
+.gmail {
+    position: relative;
+    cursor: pointer;
+}
+.gmail:hover .gmailTooltip {
+    visibility: visible;
+}
+
+

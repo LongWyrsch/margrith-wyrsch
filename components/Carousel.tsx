@@ -30,8 +30,8 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 	}
 
 	const handleLeftClick = () => {
+		setimageLoaded(false)
 		setFocusedImageIndex((prev) => {
-			setimageLoaded(false)
 			if (prev) {
 				if (prev > 0) {
 					return prev - 1
@@ -45,8 +45,8 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 	}
 
 	const handleRightClick = () => {
+		setimageLoaded(false)
 		setFocusedImageIndex((prev) => {
-			setimageLoaded(false)
 			if (prev) {
 				if (prev < images.length - 1) {
 					return prev + 1
@@ -83,7 +83,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					height="0"
 					sizes="70vw"
 				/>
-				{!imageLoaded && (
+				{imageLoaded ?? (
 					<TailSpin
 					height="80"
 					width="80"
