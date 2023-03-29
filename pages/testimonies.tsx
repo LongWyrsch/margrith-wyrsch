@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Testimonies = () => {
-  return (
-    <div>Testimonies</div>
-  )
+
+ 
+	return <div></div>
 }
 
 export default Testimonies

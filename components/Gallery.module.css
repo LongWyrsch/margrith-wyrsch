@@ -1,14 +1,35 @@
 .gallery {
-    margin: auto;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+	margin: 100px auto;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
-.imageContainer {
-    margin: 20px;
-    border: 4px solid rgb(97, 97, 97);
+.image {
+	margin: 20px;
+	height: 200px;
+	width: auto;
+
+	transition: 200ms ease;
 }
 
+.hide {
+	filter: blur(5px) opacity(0%);
+	border: 4px solid transparent;
+}
+
+.show {
+	filter: blur(0) opacity(100%);
+	border: 4px solid rgb(97, 97, 97);
+	cursor: pointer;
+}
+
+.image:hover {
+	/* opacity: 0.5 !important; */
+	border: 4px solid rgb(255, 255, 255) !important;
+}
+
+.endBuffer {
+	flex-grow: 1;
+}

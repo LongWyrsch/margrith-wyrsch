@@ -1,9 +1,14 @@
+import Image from 'next/image'
 import React from 'react'
+import styles from './Gravures.module.css'
 
-const Gravure = () => {
-  return (
-    <div>Gravure</div>
-  )
+
+const Gravures = () => {
+
+
+	return (
+	<></>
+	)
 }
 
-export default Gravure
+export default Gravures

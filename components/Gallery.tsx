@@ -1,18 +1,47 @@
+import { ImageData } from '@/commonTypes'
 import Image from 'next/image'
-import React from 'react'
+import React, { lazy, useEffect, useRef, useState } from 'react'
 import styles from './Gallery.module.css'
 
 type GalleryProps = {
-	images: string[]
+	images: ImageData[]
+	handleOnClick: (imageId: string) => void
 }
 
-const Gallery = ({ images }: GalleryProps) => {
+const Gallery = ({ images, handleOnClick }: GalleryProps) => {
+	const [allImagesLoaded, setAllImagesLoaded] = useState(false)
+	const loadedImageCountRef = useRef(0)
+
+	const handleOnLoad = (id: string) => {
+		// Detect which image loaded and add a class to it
+			// const img = document.getElementById(id)
+			// img?.classList.add(styles.loaded)
+
+		loadedImageCountRef.current++
+		if (loadedImageCountRef.current === images.length) setAllImagesLoaded(true)
+	}
+
+	const visibility = allImagesLoaded ? styles.show : styles.hide
+
 	return (
 		<div className={styles.gallery}>
-			{images.map((image, i) => (
-				// <Image key={i} className={styles.imageContainer} src={image} alt="Art piece" width="0" height="0" sizes="33vw" style={{ width: 'auto', height: '200px' }} />
-				<Image key={i} className={styles.imageContainer} src='https://drive.google.com/uc?export=view&id=12cszpmjDXhbjTZR1R8k_5-CHyvRYlm5K' alt="Art piece" width="0" height="0" sizes="33vw" style={{ width: 'auto', height: '200px' }} />
+			{images.map((image) => (
+				<div key={image.fileMetadata.id}>
+					<Image
+						className={`${styles.image}  ${visibility}`}
+						src={image.fileMetadata.thumbnailLink}
+						alt={image.artName}
+						onClick={() => handleOnClick(image.fileMetadata.id)}
+						onLoad={() => handleOnLoad(image.fileMetadata.id)}
+						width="0"
+						height="0"
+						sizes="33vw"
+						// loading="lazy"
+					/>
+					{/* <div>{image.date}</div> */}
+				</div>
 			))}
+			<div className={styles.endBuffer}></div>
 		</div>
 	)
 }
