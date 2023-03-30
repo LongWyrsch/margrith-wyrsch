@@ -1,9 +1,10 @@
 import { ImageData } from '@/commonTypes'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './Carousel.module.css'
 import { Icon } from '@iconify-icon/react'
 import { TailSpin } from  'react-loader-spinner'
+import { LanguageContext } from '@/pages/_app'
 
 type CarouselProps = {
 	focusedImageIndex: number
@@ -12,15 +13,18 @@ type CarouselProps = {
 }
 
 const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselProps) => {
+	const {language, setLanguage} = useContext(LanguageContext);
+	
 	const [imageLoaded, setimageLoaded] = useState(false)
 
-	const date = images[focusedImageIndex].date
-	const name = images[focusedImageIndex].artName
-	const description = images[focusedImageIndex].description
-	const dimensions = images[focusedImageIndex].dimensions
-	const medium = images[focusedImageIndex].medium
-	const material = images[focusedImageIndex].material
-	const technique = images[focusedImageIndex].technique
+
+	const date = images[focusedImageIndex][language].date
+	const name = images[focusedImageIndex][language].artName
+	const description = images[focusedImageIndex][language].description
+	const dimensions = images[focusedImageIndex][language].dimensions
+	const medium = images[focusedImageIndex][language].medium
+	const material = images[focusedImageIndex][language].material
+	const technique = images[focusedImageIndex][language].technique
 
 	const imageId = images[focusedImageIndex].fileMetadata.id
 	const thumbnailLink = images[focusedImageIndex].fileMetadata.thumbnailLink
@@ -74,7 +78,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 				<Image
 					className={styles.image}
 					src={`https://drive.google.com/uc?export=view&id=${imageId}`}
-					alt={name}
+					alt={name || 'Art piece'}
 					// placeholder="blur"
 					// blurDataURL={thumbnailLink}
 					quality="0.5"

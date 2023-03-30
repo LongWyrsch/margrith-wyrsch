@@ -30,7 +30,7 @@ const Gallery = ({ images, handleOnClick }: GalleryProps) => {
 					<Image
 						className={`${styles.image}  ${visibility}`}
 						src={image.fileMetadata.thumbnailLink}
-						alt={image.artName}
+						alt={image.FR.artName || 'Art piece'}
 						onClick={() => handleOnClick(image.fileMetadata.id)}
 						onLoad={() => handleOnLoad(image.fileMetadata.id)}
 						width="0"

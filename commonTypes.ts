@@ -1,14 +1,26 @@
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction } from 'react'
 
 export type SheetData = {
-	fileName: string
-	date: string
-	artName: string
-	description: string
-	dimensions: string
-	medium: string
-	material: string
-	technique: string, 
+	FR: {
+		fileName: string | null
+		date: string | null
+		dimensions: string | null
+		artName: string | null
+		description: string | null
+		medium: string | null
+		material: string | null
+		technique: string | null
+	}
+	EN: {
+		fileName: string | null
+		date: string | null
+		dimensions: string | null
+		artName: string | null
+		description: string | null
+		medium: string | null
+		material: string | null
+		technique: string | null
+	}
 }
 
 export type FileData = {
@@ -19,12 +31,9 @@ export type FileData = {
 	thumbnailLink: string
 }
 
-
-
-export type ImageData = SheetData & {fileMetadata: FileData}
-
+export type ImageData = SheetData & { fileMetadata: FileData }
 
 export type LanguageContextType = {
-	language: "FR" | "EN" 
-	setLanguage: Dispatch<SetStateAction<"FR" | "EN">>
+	language: 'FR' | 'EN'
+	setLanguage: Dispatch<SetStateAction<'FR' | 'EN'>>
 }
