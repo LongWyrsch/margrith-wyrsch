@@ -1,11 +1,11 @@
 export const navlinksFR = {
-	home: 'home',
-	paintings: 'Paintings',
+	home: 'Acceuil',
+	paintings: 'Peintures',
 	photos: 'Photos',
-	drawings: 'Drawings',
+	drawings: 'Dessins',
 	gravures: 'Gravures',
-	testimonies: 'Testimonies',
-	about: 'About',
+	testimonies: 'Témoignage',
+	about: 'À Propos',
 }
 
 export const navlinksEN = {

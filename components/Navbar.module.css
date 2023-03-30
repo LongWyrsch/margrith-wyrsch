@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    font-size: 1.5rem;
+
 }
 
 .movingElements {
@@ -25,7 +27,6 @@
 }
 
 .navLinks{
-    font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,16 +85,22 @@
 
 .languages {
     display: flex;
-    gap: 20px;
+    width: 100px;
     align-items: center;
     margin-left: 40px;
     margin-right: 20px;
 }
 
-.languages > button {
-    width: 50px;
+.languages > div {
+    padding: 5px;
     height: 40px;
-    font-size: 2rem;
+    cursor: pointer;
+    min-width: 0;
+    text-align: center;
+}
+
+.languages > div:hover {
+    text-decoration: underline;
 }
 
 
