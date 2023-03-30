@@ -63,22 +63,26 @@
     background-color: rgb(86, 86, 86);
 }
 
-.gmailTooltip{
+.gmailTooltip, .facebookTooltip{
     visibility: hidden;
-    top: -150%;
+    top: 120%;
     left: -160%;
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(189, 189, 189);
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px 10px;
     text-align: center;
     /* display: none; */
     position: absolute;
+    color: black;
+    font-size: 1rem;
 }
-.gmail {
+.gmail, .facebook {
     position: relative;
     cursor: pointer;
 }
-.gmail:hover .gmailTooltip {
+
+.gmail:hover .gmailTooltip,
+.facebook:hover .facebookTooltip {
     visibility: visible;
 }
 

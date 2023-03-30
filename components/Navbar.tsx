@@ -25,6 +25,8 @@ const Navbar = () => {
 	}
 
 	const sections = language==='FR'? navlinksFR : navlinksEN
+	const clickCopy = language==='FR'? 'Cliquer pour copier' : 'click to copy'
+	const visitFacebook = language==='FR'? 'Ouvrir la page Facebook' : 'Open the Facebook page'
 
 	return (
 		<nav className={styles.navbar}>
@@ -44,11 +46,14 @@ const Navbar = () => {
 						<div className={styles.gmailTooltip}>
 							wyrsch.m@gmail.com
 							<br />
-							(Click to copy)
+							({clickCopy})
 						</div>
 					</div>
 					<Link className={styles.facebook} href="https://www.facebook.com/people/Margrith-Wyrsch-sur-toile/100063294335389/?locale=fr_FR">
 						<Icon icon="ic:baseline-facebook" width={40} />
+						<div className={styles.facebookTooltip}>
+							{visitFacebook}
+						</div>
 					</Link>
 				</div>
 			</div>
