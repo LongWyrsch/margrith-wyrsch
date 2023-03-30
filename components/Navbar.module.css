@@ -10,7 +10,7 @@
 .movingElements {
     position: relative;
     z-index: 1;
-    transition: 1000ms ease-in-out;
+    /* transition: 1000ms ease-in-out; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -18,12 +18,27 @@
 }
 
 .low {
-    top: calc(60vh + 50px + 20px); /* Hero is 60vh, Navbar is 50px, extra 20px */
+    /* top: calc(60vh + 50px + 20px); Hero is 60vh, Navbar is 50px, extra 20px */
+    /* transition: 1000ms ease-in-out; */
+    animation: slideDown 1000ms ease-in-out forwards;
 }
 
 .top {
-    top: 0;
-    transition-delay: 300ms;
+    /* top: 0; */
+    /* transition-delay: 300ms; */
+    animation: backTop 1000ms;
+}
+
+@keyframes backTop {
+    0% { opacity: 1; top: calc(60vh + 50px + 20px)}
+    25% { opacity: 0; top: calc(60vh + 50px + 20px)}
+    75% {opacity: 0; top: 0}
+    100% {opacity: 1; top: 0}
+}
+
+@keyframes slideDown {
+    0% { top: 0}
+    100% { top: calc(60vh + 50px + 20px)}
 }
 
 .navLinks{
