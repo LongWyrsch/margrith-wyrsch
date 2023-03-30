@@ -27,7 +27,7 @@ const Drawings = ({ images }: DrawingsProps) => {
 
 export default Drawings
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const folderId = process.env.NEXT_PUBLIC_DESSINS_FOLDER_ID as string
 	const sheetName = 'Dessins'
 
