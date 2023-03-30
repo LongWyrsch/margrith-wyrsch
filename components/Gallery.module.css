@@ -22,6 +22,7 @@
 .show {
 	filter: blur(0) opacity(100%);
 	border: 4px solid rgb(97, 97, 97);
+	/* border: 4px solid rgb(255, 255, 255); */
 	cursor: pointer;
 }
 

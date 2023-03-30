@@ -1,31 +1,18 @@
+
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    font-size: 1.5rem;
-
-}
-
-.movingElements {
-    position: relative;
-    z-index: 1;
-    /* transition: 1000ms ease-in-out; */
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 0px;
+    font-size: 2rem;
+    margin: 0 40px;
 }
 
 .low {
-    /* top: calc(60vh + 50px + 20px); Hero is 60vh, Navbar is 50px, extra 20px */
-    /* transition: 1000ms ease-in-out; */
     animation: slideDown 1000ms ease-in-out forwards;
 }
 
 .top {
-    /* top: 0; */
-    /* transition-delay: 300ms; */
     animation: backTop 1000ms;
 }
 
@@ -42,12 +29,13 @@
 }
 
 .navLinks{
+    position: relative;
+    z-index: 1;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 20px;
     margin-right: 40px;
-    width: 70%;
 }
 
 .navLinks>* { 
@@ -59,26 +47,21 @@
     text-decoration: underline;
 }
 
-.contactLinks {
+.languageContact {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
 }
 
-.contactLinks > * {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+.languageContact > * {
     display: flex;
     align-items: center;
     justify-content: center;
-
-}
-.contactLinks > *:hover {
-    background-color: rgb(86, 86, 86);
+    cursor: pointer;
 }
 
-.gmailTooltip, .facebookTooltip{
+
+.gmailTooltip, .facebookTooltip, .instagramTooltip{
     visibility: hidden;
     top: 120%;
     left: -160%;
@@ -89,33 +72,39 @@
     /* display: none; */
     position: absolute;
     color: black;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
-.gmail, .facebook {
+.gmail, .facebook, .instagram {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     position: relative;
-    cursor: pointer;
+}
+
+.gmail:hover, .facebook:hover .instagram:hover {
+    background-color: rgb(86, 86, 86);
 }
 
 .gmail:hover .gmailTooltip,
-.facebook:hover .facebookTooltip {
+.facebook:hover .facebookTooltip,
+.instagram:hover .instagramTooltip {
     visibility: visible;
 }
 
 
 .languages {
-    display: flex;
-    width: 100px;
     align-items: center;
-    margin-left: 40px;
-    margin-right: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
 }
 
-.languages > div {
-    padding: 5px;
-    height: 40px;
-    cursor: pointer;
-    min-width: 0;
+.languages > * {
+    width: 50px;
     text-align: center;
+}
+
+.languages > div:nth-child(2) {
+    border-left: 2px solid white;
 }
 
 .languages > div:hover {

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useContext, useState } from 'react'
 import styles from './Carousel.module.css'
 import { Icon } from '@iconify-icon/react'
-import { TailSpin } from  'react-loader-spinner'
+import { TailSpin } from 'react-loader-spinner'
 import { LanguageContext } from '@/pages/_app'
 
 type CarouselProps = {
@@ -13,18 +13,16 @@ type CarouselProps = {
 }
 
 const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselProps) => {
-	const {language, setLanguage} = useContext(LanguageContext);
-	
+	const { language, setLanguage } = useContext(LanguageContext)
+
 	const [imageLoaded, setimageLoaded] = useState(false)
 
+	const date = images[focusedImageIndex][language]?.date
+	const name = images[focusedImageIndex][language]?.artName
+	const description = images[focusedImageIndex][language]?.description
+	const dimensions = images[focusedImageIndex][language]?.dimensions
+	const medium = images[focusedImageIndex][language]?.medium
 
-	const date = images[focusedImageIndex][language].date
-	const name = images[focusedImageIndex][language].artName
-	const description = images[focusedImageIndex][language].description
-	const dimensions = images[focusedImageIndex][language].dimensions
-	const medium = images[focusedImageIndex][language].medium
-	const material = images[focusedImageIndex][language].material
-	const technique = images[focusedImageIndex][language].technique
 
 	const imageId = images[focusedImageIndex].fileMetadata.id
 	const thumbnailLink = images[focusedImageIndex].fileMetadata.thumbnailLink
@@ -63,7 +61,6 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 		})
 	}
 
-
 	!imageLoaded && console.log('not loaded')
 	imageLoaded && console.log('loaded')
 
@@ -92,26 +89,15 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					sizes="70vw"
 					unoptimized // Without this, Next.js will have an error when trying to fetch optimized image
 				/>
-				{!imageLoaded && (
-					<TailSpin
-					height="80"
-					width="80"
-					color="white"
-					ariaLabel="tail-spin-loading"
-					radius="1"
-					wrapperStyle={{}}
-					wrapperClass={styles.spinner}
-					visible={true}
-				  />
-				)}
+				{!imageLoaded && <TailSpin height="80" width="80" color="white" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass={styles.spinner} visible={true} />}
 			</div>
 			<div className={styles.details}>
 				<p className={styles.name}>{name}</p>
-				<p>{date}</p>
-				<p>{dimensions}</p>
-				<p>{medium}</p>
-				<p>{material}</p>
-				<p>{technique}</p>
+				<div className={styles.metadata}>
+					<p>{date}</p>-
+					<p>{medium}</p>-
+					<p>{dimensions}</p>
+				</div>
 				<p>{description}</p>
 			</div>
 		</div>

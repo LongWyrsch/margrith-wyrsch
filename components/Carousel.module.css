@@ -5,7 +5,7 @@
 	height: 80vh;
 	width: 100%;
 	background-color: rgb(6, 6, 6, 0.9);
-	padding: 20px;
+	padding: 20px 100px;
 }
 
 .carouselContainer * {
@@ -31,14 +31,23 @@
 	width: 40%;
 	height: 100%;
 	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20px;
 }
 
-.details > p {
-	margin: 20px;
+.details > *:nth-child(3) {
+	margin-top: 40px;
 }
 
 .name {
 	font-size: 3rem;
+}
+
+.metadata {
+	display: flex;
+	gap: 30px;
 }
 
 .leftArrow,
@@ -48,6 +57,7 @@
 	width: 70px;
 	height: 70px;
     color: rgb(181, 180, 180);
+	z-index: 1;
 }
 .leftArrow:hover,
 .rightArrow:hover {

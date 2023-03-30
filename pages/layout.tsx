@@ -18,7 +18,7 @@ function Layout({ children }: Props) {
 			<Navbar />
 			<div className={`${styles.heroContainer} ${visibility}`}>
 				<div className={styles.maggy}>Margrith Wyrsch</div>
-				<Image className={styles.heroImage} src="/hero.jpg" alt="hero image" fill />
+				<Image className={styles.heroImage} src="/hero2.jpg" alt="hero image" fill />
 			</div>
 
 			{children}

@@ -1,14 +1,10 @@
 import { LanguageContextType } from '@/commonTypes'
 import '@/styles/globals.css'
+import { marckScript } from '@/utlis/fonts'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { createContext, Dispatch, SetStateAction, useState } from 'react'
+import { createContext, useState } from 'react'
 import Layout from './layout'
-import { Montserrat } from 'next/font/google'
-
-const montserrat = Montserrat({
-	subsets: ['latin'],
-})
 
 export const LanguageContext = createContext<LanguageContextType>({} as LanguageContextType)
 
@@ -23,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="" />
 			</Head>
-			<main className={montserrat.className}>
+			<main className={marckScript.className}>
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>

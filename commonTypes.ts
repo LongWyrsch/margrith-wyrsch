@@ -8,8 +8,6 @@ export type SheetData = {
 		artName: string | null
 		description: string | null
 		medium: string | null
-		material: string | null
-		technique: string | null
 	}
 	EN: {
 		fileName: string | null
@@ -18,8 +16,6 @@ export type SheetData = {
 		artName: string | null
 		description: string | null
 		medium: string | null
-		material: string | null
-		technique: string | null
 	}
 }
 
@@ -31,7 +27,25 @@ export type FileData = {
 	thumbnailLink: string
 }
 
-export type ImageData = SheetData & { fileMetadata: FileData }
+export type ImageData = { 
+	FR?: {
+		fileName: string | null
+		date: string | null
+		dimensions: string | null
+		artName: string | null
+		description: string | null
+		medium: string | null
+	}
+	EN?: {
+		fileName: string | null
+		date: string | null
+		dimensions: string | null
+		artName: string | null
+		description: string | null
+		medium: string | null
+	}
+	fileMetadata: FileData 
+}
 
 export type LanguageContextType = {
 	language: 'FR' | 'EN'

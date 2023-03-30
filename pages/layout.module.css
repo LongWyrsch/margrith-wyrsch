@@ -10,15 +10,18 @@
 	width: 100%;
 	object-fit: cover;
 	/* object-position: center center; */
+	filter: brightness(70%) 
 }
 
 .maggy {
     position: absolute;
-	top: 50%;
-	left: 0;
+	top: 65%;
+	left: 40px;
 	z-index: 1;
 	color: white;
-	font-size: 5rem;
+	font-size: 4.5rem;
+	/* background-color: rgb(40, 40, 40, 0.5); */
+	border-radius: 20px;
 }
 
 .show {
