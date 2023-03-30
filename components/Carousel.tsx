@@ -63,6 +63,10 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 		})
 	}
 
+
+	!imageLoaded && console.log('not loaded')
+	imageLoaded && console.log('loaded')
+
 	return (
 		<div className={styles.carouselContainer}>
 			<div className={styles.leftArrow} onClick={handleLeftClick}>
@@ -88,7 +92,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					sizes="70vw"
 					unoptimized // Without this, Next.js will have an error when trying to fetch optimized image
 				/>
-				{imageLoaded ?? (
+				{!imageLoaded && (
 					<TailSpin
 					height="80"
 					width="80"
