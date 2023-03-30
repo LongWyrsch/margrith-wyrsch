@@ -20,3 +20,9 @@ export type FileData = {
 
 
 export type ImageData = SheetData & {fileMetadata: FileData}
+
+
+export type LanguageContextType = {
+	language: "FR" | "EN" 
+	setLanguage: Dispatch<SetStateAction<"FR" | "EN">>
+}
