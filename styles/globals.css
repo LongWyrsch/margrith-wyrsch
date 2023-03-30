@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=:wght@400;900&display=swap');
-/* font-family: 'Montserrat', sans-serif; */
-
 :root {
 }
 
@@ -21,7 +18,6 @@ body {
 	/* overflow-x: hidden;  */
 	background-color: rgb(29, 29, 29);
 	color: white;
-	font-family: 'Montserrat', sans-serif;
 }
 
 body {

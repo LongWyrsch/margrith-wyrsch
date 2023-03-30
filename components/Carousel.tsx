@@ -86,6 +86,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					width="0"
 					height="0"
 					sizes="70vw"
+					unoptimized // Without this, Next.js will have an error when trying to fetch optimized image
 				/>
 				{imageLoaded ?? (
 					<TailSpin
