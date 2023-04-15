@@ -58,6 +58,7 @@
 	height: 70px;
     color: rgb(181, 180, 180);
 	z-index: 1;
+	cursor: pointer;
 }
 .leftArrow:hover,
 .rightArrow:hover {

@@ -2,6 +2,8 @@ import { ImageData } from '@/commonTypes'
 import Image from 'next/image'
 import React, { lazy, useEffect, useRef, useState } from 'react'
 import styles from './Gallery.module.css'
+import { TailSpin } from 'react-loader-spinner'
+
 
 type GalleryProps = {
 	images: ImageData[]
@@ -25,6 +27,7 @@ const Gallery = ({ images, handleOnClick }: GalleryProps) => {
 
 	return (
 		<div className={styles.gallery}>
+			{!allImagesLoaded && <TailSpin height="80" width="80" color="white" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass={styles.spinner} visible={true} />}
 			{images.map((image) => (
 				<div key={image.fileMetadata.id}>
 					<Image

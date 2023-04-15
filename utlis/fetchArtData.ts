@@ -8,8 +8,8 @@ export const fetchImageData = async (folderId: string, sheetName: string) => {
 		try {
 			const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spredsheetId}/values/${sheetName}?key=${apiKey}`)
 			const JSON = await response.json()
-			const table = JSON.values as [string, string, string, string, string, string, string, string, string, string, string, string][]
-			const headers = ['fileName', 'date', 'dimensions', 'artName', 'descriptionFR', 'mediumFR', 'descriptionEN', 'mediumEN']
+			const table = JSON.values as [string, string, string, string, string, string, string][]
+			// const headers = ['fileName', 'date', 'dimensions', 'artName', 'descriptionFR', 'mediumFR', 'descriptionEN', 'mediumEN']
 			let data: {}[] = []
 			table.slice(1).forEach((row, i) => {
 				data.push({
@@ -18,20 +18,14 @@ export const fetchImageData = async (folderId: string, sheetName: string) => {
 						date: row[1] ? row[1] : null,
 						dimensions: row[2] ? row[2] : null,
 						artName: row[3] ? row[3] : null,
-						description: row[4] ? row[4] : null,
-						medium: row[5] ? row[5] : null,
-						material: row[6] ? row[6] : null,
-						technique: row[7] ? row[7] : null,
+						medium: row[4] ? row[4] : null,
 					},
 					EN: {
 						fileName: row[0] ? row[0] : null,
 						date: row[1] ? row[1] : null,
 						dimensions: row[2] ? row[2] : null,
-						artName: row[3] ? row[3] : null,
-						description: row[8] ? row[8] : null,
-						medium: row[9] ? row[9] : null,
-						material: row[10] ? row[10] : null,
-						technique: row[11] ? row[11] : null,
+						artName: row[5] ? row[5] : null,
+						medium: row[6] ? row[6] : null,
 					},
 				})
 			})

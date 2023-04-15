@@ -34,3 +34,11 @@
 .endBuffer {
 	flex-grow: 1;
 }
+
+.spinner {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+	background-color: rgb(0, 0, 0, 0);
+	border-radius: 50%;
+}

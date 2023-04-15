@@ -5,6 +5,7 @@ import styles from './Carousel.module.css'
 import { Icon } from '@iconify-icon/react'
 import { TailSpin } from 'react-loader-spinner'
 import { LanguageContext } from '@/pages/_app'
+import { useRouter } from 'next/router'
 
 type CarouselProps = {
 	focusedImageIndex: number
@@ -15,6 +16,9 @@ type CarouselProps = {
 const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselProps) => {
 	const { language, setLanguage } = useContext(LanguageContext)
 
+	const route = useRouter()
+	const isPhotoPage = route.pathname === '/photos' ? true : false
+
 	const [imageLoaded, setimageLoaded] = useState(false)
 
 	const date = images[focusedImageIndex][language]?.date
@@ -22,7 +26,6 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 	const description = images[focusedImageIndex][language]?.description
 	const dimensions = images[focusedImageIndex][language]?.dimensions
 	const medium = images[focusedImageIndex][language]?.medium
-
 
 	const imageId = images[focusedImageIndex].fileMetadata.id
 	const thumbnailLink = images[focusedImageIndex].fileMetadata.thumbnailLink
@@ -49,7 +52,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 	const handleRightClick = () => {
 		setimageLoaded(false)
 		setFocusedImageIndex((prev) => {
-			if (prev) {
+			if (prev || prev === 0) {
 				if (prev < images.length - 1) {
 					return prev + 1
 				} else {
@@ -61,8 +64,8 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 		})
 	}
 
-	!imageLoaded && console.log('not loaded')
-	imageLoaded && console.log('loaded')
+	// !imageLoaded && console.log('not loaded')
+	// imageLoaded && console.log('loaded')
 
 	return (
 		<div className={styles.carouselContainer}>
@@ -82,7 +85,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					alt={name || 'Art piece'}
 					// placeholder="blur"
 					// blurDataURL={thumbnailLink}
-					quality="0.5"
+					// quality="0.5"
 					onLoad={handleOnLoad}
 					width="0"
 					height="0"
@@ -91,7 +94,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 				/>
 				{!imageLoaded && <TailSpin height="80" width="80" color="white" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass={styles.spinner} visible={true} />}
 			</div>
-			<div className={styles.details}>
+			{!isPhotoPage && <div className={styles.details}>
 				<p className={styles.name}>{name}</p>
 				<div className={styles.metadata}>
 					<p>{date}</p>-
@@ -99,7 +102,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					<p>{dimensions}</p>
 				</div>
 				<p>{description}</p>
-			</div>
+			</div>}
 		</div>
 	)
 }
