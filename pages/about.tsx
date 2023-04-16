@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import styles from './about.module.css'
-import { useRouter } from 'next/router'
 import { LanguageContext } from '@/pages/_app'
 import { aboutFR, aboutEN } from '@/translations'
+import { montserrat } from '@/utlis/fonts'
+import { marckScript } from '@/utlis/fonts'
+
 
 
 
@@ -12,19 +14,19 @@ const About = () => {
 	const about = language==='FR'? aboutFR : aboutEN
 
   return (
-    <div className={styles.aboutWrapper}>
-      <div className={styles.title}>{about.demarche}</div>
-      <p className={styles.paragraph}>{about.d1}</p>
-      <p className={styles.paragraph}>{about.d2}</p>
-      <p className={styles.paragraph}>{about.d3}</p>
-      <p>
-        <div className={styles.paragraph}>{about.d4l1}</div>
-        <div className={styles.paragraph}>{about.d4l2}</div>
-        <div className={styles.paragraph}>{about.d4l3}</div>
-        <div className={styles.paragraph}>{about.d4l4}</div>
-      </p>
-      <p className={styles.paragraph}>{about.d5}</p>
-      <div className={styles.title}>{about.etudes}</div>
+    <div className={`${styles.aboutWrapper} ${montserrat.className}`}>
+      <div className={`${styles.title} ${marckScript.className}`}>{about.demarche}</div>
+      <div className={styles.paragraph}>{about.d1}</div>
+      <div className={styles.paragraph}>{about.d2}</div>
+      <div className={styles.paragraph}>{about.d3}</div>
+      <div className={styles.paragraph}>
+        <div >{about.d4l1}</div>
+        <div >{about.d4l2}</div>
+        <div >{about.d4l3}</div>
+        <div >{about.d4l4}</div>
+      </div>
+      <div className={styles.paragraph}>{about.d5}</div>
+      <div className={`${styles.title} ${marckScript.className}`}>{about.etudes}</div>
       <div className={styles.item}>
         <div className={styles.dates}>2016 - 2018</div><div>{about.etudes11}<br/>{about.etudes12}</div>
       </div>
@@ -40,7 +42,7 @@ const About = () => {
       <div className={styles.item}>
         <div className={styles.dates}>1982 - 1885</div><div>{about.etudes51}<br/>{about.etudes52}</div>
       </div>
-      <div className={styles.title}>{about.expoIndividuelles}</div>
+      <div className={`${styles.title} ${marckScript.className}`}>{about.expoIndividuelles}</div>
       <div className={styles.item}>
         <div className={styles.dates}>2021</div><div>{about.expoInd11}<br/>{about.expoInd12}</div>
       </div>
@@ -77,7 +79,7 @@ const About = () => {
       <div className={styles.item}>
         <div className={styles.dates}>1997</div><div>{about.expoInd121}<br/>{about.expoInd122}<br/>{about.expoInd123}</div>
       </div>
-      <div className={styles.title}>{about.expoCollectives}</div>
+      <div className={`${styles.title} ${marckScript.className}`}>{about.expoCollectives}</div>
       <div className={styles.item}>
         <div className={styles.dates}>2020</div><div>{about.expoCol11}</div>
       </div>
@@ -96,11 +98,12 @@ const About = () => {
       <div className={styles.item}>
         <div className={styles.dates}>1992</div><div>{about.expoCol61}<br/>{about.expoCol62}<br/>{about.expoCol63}</div>
       </div>
-      <div className={styles.title}>Collections:</div>
-      <div>{about.collections}</div>
-      <div>{about.coll1}</div>
-      <div>{about.coll2}</div>
-      <div className={styles.title}>{about.publications}</div>
+      <div className={`${styles.title} ${marckScript.className}`}>Collections:</div>
+      <div>{about.collections}:</div>
+      <br/>
+      <div className={styles.item}>{about.coll1}</div>
+      <div className={styles.item}>{about.coll2}</div>
+      <div className={`${styles.title} ${marckScript.className}`}>{about.publications}</div>
       <div className={styles.item}>
         <div className={styles.dates}>2015</div><div>{about.pub1}</div>
       </div>
