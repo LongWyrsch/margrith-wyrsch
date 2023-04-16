@@ -1,0 +1,21 @@
+.aboutWrapper{
+    margin: 100px;
+    font-size: 1.5rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin: 50px 0 20px;
+}
+
+p.paragraph {
+    margin: 30px 0;
+}
+
+.item {
+    display: flex;
+}
+
+.dates {
+    width: 100px;
+}

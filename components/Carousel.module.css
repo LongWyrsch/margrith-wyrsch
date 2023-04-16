@@ -48,6 +48,7 @@
 .metadata {
 	display: flex;
 	gap: 30px;
+	flex-direction: column;
 }
 
 .leftArrow,

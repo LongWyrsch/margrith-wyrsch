@@ -97,8 +97,8 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 			{!isPhotoPage && <div className={styles.details}>
 				<p className={styles.name}>{name}</p>
 				<div className={styles.metadata}>
-					<p>{date}</p>-
-					<p>{medium}</p>-
+					<p>{date}</p>
+					<p>{medium}</p>
 					<p>{dimensions}</p>
 				</div>
 				<p>{description}</p>

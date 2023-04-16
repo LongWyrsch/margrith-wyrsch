@@ -47,13 +47,13 @@ const Drawings = ({ imagesAgenda, imagesPaysages, imagesNatureMorte, imagesPapie
 
 	return (
 		<div>
-			<h1>Dessins Agenda</h1>
+			<div style={{textAlign: "center", fontSize: "3rem",}}>Dessins Agenda</div>
 			{imagesAgenda && imagesAgenda.length > 0 && <Gallery images={imagesAgenda} handleOnClick={handleOnClickAgenda} />}
-			<h1>Dessins Paysages</h1>
+			<div style={{textAlign: "center", fontSize: "3rem",}}>Dessins Paysages</div>
 			{imagesPaysages && imagesPaysages.length > 0 && <Gallery images={imagesPaysages} handleOnClick={handleOnClickPaysages} />}
-			<h1>Dessins Nature Morte</h1>
+			<div style={{textAlign: "center", fontSize: "3rem",}}>Dessins Nature Morte</div>
 			{imagesNatureMorte && imagesNatureMorte.length > 0 && <Gallery images={imagesNatureMorte} handleOnClick={handleOnClickNatureMorte} />}
-			<h1>Dessins sur Papier Noir et Sculptures</h1>
+			<div style={{textAlign: "center", fontSize: "3rem",}}>Dessins sur Papier Noir et Sculptures</div>
 			{imagesPapierEtSculptures && imagesPapierEtSculptures.length > 0 && <Gallery images={imagesPapierEtSculptures} handleOnClick={handleOnClickPapierEtSculptures} />}
 			{focusedImageIndex !== null && focusedImageIndex >= 0 && images != null && <Carousel focusedImageIndex={focusedImageIndex} setFocusedImageIndex={setFocusedImageIndex} images={images} />}
 		</div>
