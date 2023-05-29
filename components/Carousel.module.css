@@ -8,6 +8,7 @@
 	padding: 20px 100px;
 }
 
+
 .carouselContainer * {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -47,8 +48,9 @@
 
 .metadata {
 	display: flex;
-	gap: 30px;
+	gap: 10px;
 	flex-direction: column;
+	margin-top: 40px;
 }
 
 .leftArrow,

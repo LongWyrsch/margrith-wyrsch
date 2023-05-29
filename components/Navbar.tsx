@@ -42,7 +42,7 @@ const Navbar = () => {
 					<Link className={activeClass('/photos')} href="/photos">{sections.photos}</Link>
 					<Link className={activeClass('/drawings')} href="/drawings">{sections.drawings}</Link>
 					<Link className={activeClass('/gravures')} href="/gravures">{sections.gravures}</Link>
-					<Link className={activeClass('/testimonies')} href="/testimonies">{sections.testimonies}</Link>
+					{/* <Link className={activeClass('/testimonies')} href="/testimonies">{sections.testimonies}</Link> */}
 					<Link className={activeClass('/about')} href="/about">{sections.about}</Link>
 			</div>
 			<div className={`${styles.languageContact} ${montserrat.className}`}>

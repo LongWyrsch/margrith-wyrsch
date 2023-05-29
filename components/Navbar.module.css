@@ -113,7 +113,7 @@
 
 
 .active {
-    font-weight: 600;
+    /* font-weight: 600; */
     color: white;
     background-color: rgb(56, 56, 56);
     border-radius: 20px;

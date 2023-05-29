@@ -62,7 +62,7 @@ const Drawings = ({ imagesAgenda, imagesPaysages, imagesNatureMorte, imagesPapie
 
 export default Drawings
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const folderIdAgenda = process.env.NEXT_PUBLIC_AGENDA_FOLDER_ID as string
 	const folderIdNatureMorte = process.env.NEXT_PUBLIC_NATUREMORTE_FOLDER_ID as string
 	const folderIdPaysages = process.env.NEXT_PUBLIC_PAYSAGES_FOLDER_ID as string
