@@ -44,16 +44,15 @@ const Drawings = ({ imagesAgenda, imagesPaysages, imagesNatureMorte, imagesPapie
 		}
 	}
 
-
 	return (
 		<div>
-			<div style={{textAlign: "center", fontSize: "3rem", marginTop: '1rem'}}>Dessins Agenda</div>
+			<div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins Agenda</div>
 			{imagesAgenda && imagesAgenda.length > 0 && <Gallery images={imagesAgenda} handleOnClick={handleOnClickAgenda} />}
-			<div style={{textAlign: "center", fontSize: "3rem", marginTop: '1rem'}}>Dessins Paysages</div>
+			<div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins Paysages</div>
 			{imagesPaysages && imagesPaysages.length > 0 && <Gallery images={imagesPaysages} handleOnClick={handleOnClickPaysages} />}
-			<div style={{textAlign: "center", fontSize: "3rem", marginTop: '1rem'}}>Dessins Nature Morte</div>
+			<div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins Nature Morte</div>
 			{imagesNatureMorte && imagesNatureMorte.length > 0 && <Gallery images={imagesNatureMorte} handleOnClick={handleOnClickNatureMorte} />}
-			<div style={{textAlign: "center", fontSize: "3rem", marginTop: '1rem'}}>Dessins sur Papier Noir et Sculptures</div>
+			<div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins sur Papier Noir et Sculptures</div>
 			{imagesPapierEtSculptures && imagesPapierEtSculptures.length > 0 && <Gallery images={imagesPapierEtSculptures} handleOnClick={handleOnClickPapierEtSculptures} />}
 			{focusedImageIndex !== null && focusedImageIndex >= 0 && images != null && <Carousel focusedImageIndex={focusedImageIndex} setFocusedImageIndex={setFocusedImageIndex} images={images} />}
 		</div>
@@ -82,7 +81,7 @@ export async function getStaticProps() {
 			imagesAgenda,
 			imagesPaysages,
 			imagesNatureMorte,
-			imagesPapierEtSculptures
+			imagesPapierEtSculptures,
 		},
 	}
 }

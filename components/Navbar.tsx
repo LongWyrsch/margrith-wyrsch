@@ -7,9 +7,13 @@ import React, { useContext } from 'react'
 import styles from './Navbar.module.css'
 
 import { Montserrat } from 'next/font/google'
+import { poiretOne } from '@/utlis/fonts'
+
+
 const montserrat = Montserrat({
 	subsets: ['latin'],
 })
+
 
 const Navbar = () => {
 	const route = useRouter()
@@ -45,7 +49,7 @@ const Navbar = () => {
 					{/* <Link className={activeClass('/testimonies')} href="/testimonies">{sections.testimonies}</Link> */}
 					<Link className={activeClass('/about')} href="/about">{sections.about}</Link>
 			</div>
-			<div className={`${styles.languageContact} ${montserrat.className}`}>
+			<div className={`${styles.languageContact} ${poiretOne.className}`}>
 				<div className={styles.gmail} onClick={copyContent}>
 					<Icon icon="mdi:gmail" width={40} />
 					<div className={styles.gmailTooltip}>

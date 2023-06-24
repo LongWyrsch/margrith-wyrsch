@@ -1,6 +1,6 @@
 import { LanguageContextType } from '@/commonTypes'
 import '@/styles/globals.css'
-import { marckScript } from '@/utlis/fonts'
+import { poiretOne } from '@/utlis/fonts'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { createContext, useState } from 'react'
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="" />
 			</Head>
-			<main className={marckScript.className}>
+			<main className={poiretOne.className}>
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
