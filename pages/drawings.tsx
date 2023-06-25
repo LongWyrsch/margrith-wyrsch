@@ -46,7 +46,7 @@ const Drawings = ({ imagesAgenda, imagesPaysages, imagesNatureMorte, imagesPapie
 
 	return (
 		<div>
-			<div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins Agenda</div>
+			<div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '3rem' }}>Dessins Agenda</div>
 			{imagesAgenda && imagesAgenda.length > 0 && <Gallery images={imagesAgenda} handleOnClick={handleOnClickAgenda} />}
 			<div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins Paysages</div>
 			{imagesPaysages && imagesPaysages.length > 0 && <Gallery images={imagesPaysages} handleOnClick={handleOnClickPaysages} />}

@@ -10,8 +10,7 @@
 	width: 100%;
 	object-fit: cover;
 	/* object-position: center center; */
-	filter: brightness(120%);
-	filter: saturate(150%);
+	filter: saturate(150%) brightness(120%);
 }
 
 .maggy {
@@ -34,5 +33,23 @@
 .hide {
 	filter: blur(5px) opacity(0);
     position: absolute;
+}
+
+@media screen and (max-width: 576px) {
+	.heroContainer {
+		height: 20vh;
+	}
+
+	.maggy {
+		top: 120%;
+		left: 50%;
+		font-weight: 1000;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 100%;
+		z-index: 1;
+		color: white;
+		font-size: 2.5rem;
+	}
 }
 

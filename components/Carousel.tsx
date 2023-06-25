@@ -70,10 +70,10 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 	return (
 		<div className={styles.carouselContainer}>
 			<div className={styles.leftArrow} onClick={handleLeftClick}>
-				<Icon icon="mdi:arrow-left-circle" width={70} />
+				<Icon icon="mdi:arrow-left-circle" width={window.innerWidth > 576? 70 : 40} />
 			</div>
 			<div className={styles.rightArrow} onClick={handleRightClick}>
-				<Icon icon="mdi:arrow-right-circle" width={70} />
+				<Icon icon="mdi:arrow-right-circle" width={window.innerWidth > 576? 70 : 40} />
 			</div>
 			<div className={styles.close} onClick={() => setFocusedImageIndex(null)}>
 				<Icon icon="material-symbols:close-rounded" width={60} />

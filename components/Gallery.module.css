@@ -38,7 +38,29 @@
 .spinner {
     position: fixed;
     top: 35%;
-    left: 50%;
+    left: 50vw;
 	background-color: rgb(0, 0, 0, 0);
 	border-radius: 50%;
+}
+
+@media screen and (max-width: 576px) {
+	.gallery {
+		justify-content: space-around;
+	}
+
+	.spinner {
+		left: 50vw;
+		transform: translate(-50%, -50%);
+	}
+
+	.endBuffer {
+		display: none;
+	}
+}
+
+
+@media screen and (max-width: 1100px) {
+	.gallery {
+		justify-content: space-around;
+	}
 }
