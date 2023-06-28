@@ -24,6 +24,8 @@ const Gallery = ({ images, handleOnClick }: GalleryProps) => {
 	}
 
 	const visibility = allImagesLoaded ? styles.show : styles.hide
+	
+	images.map((image) => console.log(image.fileMetadata.thumbnailLink))
 
 	return (
 		<div className={styles.gallery}>
