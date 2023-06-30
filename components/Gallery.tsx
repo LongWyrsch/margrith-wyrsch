@@ -38,9 +38,6 @@ const Gallery = ({ images, handleOnClick }: GalleryProps) => {
 						alt={image.FR?.artName || 'Art piece'}
 						onClick={() => handleOnClick(image.fileMetadata.id)}
 						onLoad={() => handleOnLoad(image.fileMetadata.id)}
-						width="0"
-						height="0"
-						sizes="33vw"
 						// loading="lazy"
 					/>
 					{/* <div>{image.date}</div> */}
