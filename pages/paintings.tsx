@@ -27,7 +27,7 @@ const Paintings = ({ images }: PaintingsProps) => {
 
 export default Paintings
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const folderId = process.env.NEXT_PUBLIC_PEINTURES_FOLDER_ID as string
 	const sheetName = 'Peintures'
 
