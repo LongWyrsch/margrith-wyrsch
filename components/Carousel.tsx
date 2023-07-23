@@ -90,7 +90,7 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					width="0"
 					height="0"
 					sizes="70vw"
-					unoptimized // Without this, Next.js will have an error when trying to fetch optimized image
+					unoptimized // Without this, Next.js will optimize each photo, which will result in exceeding the image optimization quota for free Vercel accounts.
 				/>
 				{!imageLoaded && <TailSpin height="80" width="80" color="white" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass={styles.spinner} visible={true} />}
 			</div>

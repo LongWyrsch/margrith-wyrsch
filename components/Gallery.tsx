@@ -38,8 +38,8 @@ const Gallery = ({ images, handleOnClick }: GalleryProps) => {
 						alt={image.FR?.artName || 'Art piece'}
 						onClick={() => handleOnClick(image.fileMetadata.id)}
 						onLoad={() => handleOnLoad(image.fileMetadata.id)}
-						unoptimized
-						// loading="lazy"
+						unoptimized // Without this, Next.js will optimize each photo, which will result in exceeding the image optimization quota for free Vercel accounts.
+						loading="lazy"
 					/>
 					{/* <div>{image.date}</div> */}
 				</div>
