@@ -18,6 +18,20 @@ export const navlinksEN = {
 	about: 'About',
 }
 
+export const drawingHeadersEN = {
+	agenda: 'Agenda Drawings',
+	paysages: 'Landscapes Drawings',
+	nature: 'Still Life Drawings',
+	sculptures: 'Drawings on Black Paper and Sculptures'
+}
+
+export const drawingHeadersFR = {
+	agenda: 'Dessins Agenda',
+	paysages: 'Dessins Paysages',
+	nature: 'Dessins Nature Morte',
+	sculptures: 'Dessins sur Papier Noir et Sculptures'
+}
+
 export const aboutFR = {
 	demarche: "Démarche",
 	d1:"Je travaille sur un concept japonais appelé WabiSabi. C'est une éthique apparue au Japon du XIIe siècle qui prône le retour à une simplicité, à une appréciation de la beauté des choses imparfaites, éphémères et modestes.",
