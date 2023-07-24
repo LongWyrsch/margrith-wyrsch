@@ -20,7 +20,7 @@
 .imageContainer {
 	top: 100px;
 	width: 60%;
-	height: 80%;
+	height: 100%;
 	text-align: center;
 	position: relative;
 }
@@ -111,6 +111,7 @@
 	}
 
 	.imageContainer {
+		top: 0px;
 		margin-top: 60px;
 		width: 75%;
 		max-height: 50%;
@@ -156,17 +157,18 @@
 	}
 	
 	.imageContainer {
+		top: 0px;
 		margin-top: 60px;
 		width: 75%;
 		max-height: 50%;
 	}
 	
 	.leftArrow {
-		left: 70px;
+		left: 30px;
 	}
 	
 	.rightArrow {
-		right: 70px;
+		right: 30px;
 	}
 
 	.leftArrow,
