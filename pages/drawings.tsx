@@ -1,6 +1,9 @@
 import { ImageData } from '@/commonTypes'
 import Gallery from '@/components/Gallery'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { drawingHeadersEN, drawingHeadersFR } from '@/translations'
+import { LanguageContext } from '@/pages/_app'
+
 
 type DrawingsProps = {
 	imagesAgenda: ImageData[]
@@ -10,6 +13,9 @@ type DrawingsProps = {
 }
 
 const Drawings = ({ imagesAgenda, imagesPaysages, imagesNatureMorte, imagesPapierEtSculptures }: DrawingsProps) => {
+	const {language, setLanguage} = useContext(LanguageContext);
+	const drawingHeaders = language==='FR'? drawingHeadersFR : drawingHeadersEN
+
 	// First, detect if all section images are loaded, then show the section header. 
 	const [agendaLoaded, setAgendaLoaded] = useState(false)
 	const [paysagesLoaded, setPaysagesLoaded] = useState(false)
@@ -27,13 +33,13 @@ const Drawings = ({ imagesAgenda, imagesPaysages, imagesNatureMorte, imagesPapie
 
 	return (
 		<div>
-			{agendaLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '3rem' }}>Dessins Agenda</div>}
+			{agendaLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '3rem' }}>{drawingHeaders.agenda}</div>}
 			<Gallery folderId={folderIdAgenda} sheetName={agenda} isLoaded={setAgendaLoaded}/>
-			{paysagesLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins Paysages</div>}
-			<Gallery folderId={folderIdNatureMorte} sheetName={paysages} isLoaded={setPaysagesLoaded}/>
-			{natureMorteLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins Nature Morte</div>}
-			<Gallery folderId={folderIdPaysages} sheetName={natureMorte} isLoaded={setNatureMorteLoaded}/>
-			{papierEtSculpturesLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>Dessins sur Papier Noir et Sculptures</div>}
+			{natureMorteLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>{drawingHeaders.nature}</div>}
+			<Gallery folderId={folderIdNatureMorte} sheetName={natureMorte} isLoaded={setPaysagesLoaded}/>
+			{paysagesLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>{drawingHeaders.paysages}</div>}
+			<Gallery folderId={folderIdPaysages} sheetName={paysages} isLoaded={setNatureMorteLoaded}/>
+			{papierEtSculpturesLoaded && <div style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>{drawingHeaders.sculptures}</div>}
 			<Gallery folderId={folderIdPapierEtSculptures} sheetName={papierEtSculptures} isLoaded={setPapierEtSculpturesLoaded}/>
 		</div>
 	)
