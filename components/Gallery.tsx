@@ -1,4 +1,4 @@
-import { ImageData } from '@/commonTypes'
+import { FileData, ImageData } from '@/commonTypes'
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './Gallery.module.css'
@@ -24,6 +24,7 @@ const Gallery = ({ folderId, sheetName, isLoaded }: GalleryProps) => {
 			setImages(await fetchImageData(folderId, sheetName))
 		}
 		fetchImages()
+	 // eslint-disable-next-line react-hooks/exhaustive-deps
 	 }, [])
 
 	// Show carousel on click
@@ -46,6 +47,25 @@ const Gallery = ({ folderId, sheetName, isLoaded }: GalleryProps) => {
 	}
 	const visibility = allImagesLoaded ? styles.show : styles.hide
 	
+	
+	// Some image thumbnails are so small that they apprear blurry. Use actual image instead.
+	const returnThumbnailOrFullImage = (image: ImageData) => {
+		// The following methods removes special accents: .normalize("NFD").replace(/\p{Diacritic}/gu, "")
+		const largeImages = [
+			"Gussi, 2023, Gravé sur Tetra Pak, Engraved on Tetra Pak, 3,7 cm x 19,5 cm.jpeg".normalize("NFD").replace(/\p{Diacritic}/gu, ""),
+			"Bambou, 2023, Gravé sur Tetra Pak, Engraved on Tetra Pak, 9,3 cm x 19,5 cm.jpeg".normalize("NFD").replace(/\p{Diacritic}/gu, ""),
+			"Escalier : Stairs, 2023, Gravé sur Tetra Pak, Engraved on Tetra Pak, 5,5 cm x 16 cm.jpeg".normalize("NFD").replace(/\p{Diacritic}/gu, "")
+		]
+
+		let imageUrl
+		if (largeImages.includes(image.fileMetadata.name.normalize("NFD").replace(/\p{Diacritic}/gu, "")))
+			imageUrl = `https://drive.google.com/uc?export=view&id=${image.fileMetadata.id}`
+		else
+			imageUrl = image.fileMetadata.thumbnailLink
+
+		return imageUrl
+	}
+	 
 	return (
 		<div className={styles.gallery}>
 			{!allImagesLoaded && <TailSpin height="80" width="80" color="white" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass={styles.spinner} visible={true} />}
@@ -53,7 +73,7 @@ const Gallery = ({ folderId, sheetName, isLoaded }: GalleryProps) => {
 				<div key={image.fileMetadata.id} className={styles.imageContainer}>
 					<Image
 						className={`${styles.image}  ${visibility}`}
-						src={image.fileMetadata.thumbnailLink}
+						src={returnThumbnailOrFullImage(image)}
 						alt={image.FR?.artName || 'Art piece'}
 						onClick={() => handleOnClick(image.fileMetadata.id)}
 						onLoad={() => handleOnLoad(image.fileMetadata.id)}
