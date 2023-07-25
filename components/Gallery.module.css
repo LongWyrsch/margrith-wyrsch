@@ -55,6 +55,7 @@
 
 	.image {
 		height: 150px;
+		max-width: 80vw;
 	}
 }
 
