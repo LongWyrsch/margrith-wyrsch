@@ -50,7 +50,7 @@ const Gallery = ({ folderId, sheetName, isLoaded }: GalleryProps) => {
 		<div className={styles.gallery}>
 			{!allImagesLoaded && <TailSpin height="80" width="80" color="white" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass={styles.spinner} visible={true} />}
 			{images.map((image) => (
-				<div key={image.fileMetadata.id}>
+				<div key={image.fileMetadata.id} className={styles.imageContainer}>
 					<Image
 						className={`${styles.image}  ${visibility}`}
 						src={image.fileMetadata.thumbnailLink}
@@ -59,8 +59,10 @@ const Gallery = ({ folderId, sheetName, isLoaded }: GalleryProps) => {
 						onLoad={() => handleOnLoad(image.fileMetadata.id)}
 						unoptimized // Without this, Next.js will optimize each photo, which will result in exceeding the image optimization quota for free Vercel accounts.
 						// loading="lazy" // No point in loading "lazy" since they all show once ALL are loaded.
-						width={0}
-						height={0}
+						// fill={true}
+						height={200}
+						width={0}	
+
 					/>
 					{/* <div>{image.date}</div> */}
 				</div>

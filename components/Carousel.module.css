@@ -1,10 +1,10 @@
 .carouselContainer {
 	position:fixed;
 	top: 0px;
+	left: 0px;
 	display: flex;
 	height: 100vh;
 	width: 100vw;
-	left: 0;
 	background-color: rgb(6, 6, 6, 0.9);
 	padding: 20px 100px;
 	z-index: 1; /* Without this, "Home" button is on top on small screens. */
@@ -26,8 +26,8 @@
 }
 
 .image {
-	width: 100%;
-	height: 100%;
+	/* width: 100%;
+	height: 100%; */
 	object-fit: contain;
 }
 
@@ -116,6 +116,7 @@
 		width: 75%;
 		max-height: 50%;
 	}
+	
 
 	.leftArrow {
 		left: 20px;

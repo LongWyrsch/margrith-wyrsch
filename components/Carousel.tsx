@@ -83,13 +83,11 @@ const Carousel = ({ focusedImageIndex, setFocusedImageIndex, images }: CarouselP
 					className={styles.image}
 					src={`https://drive.google.com/uc?export=view&id=${imageId}`}
 					alt={name || 'Art piece'}
-					// placeholder="blur"
-					// blurDataURL={thumbnailLink}
+					placeholder="blur"
+					blurDataURL={thumbnailLink}
 					// quality="0.5"
 					onLoad={handleOnLoad}
-					width="0"
-					height="0"
-					sizes="70vw"
+					fill={true}
 					unoptimized // Without this, Next.js will optimize each photo, which will result in exceeding the image optimization quota for free Vercel accounts.
 				/>
 				{!imageLoaded && <TailSpin height="80" width="80" color="white" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass={styles.spinner} visible={true} />}
