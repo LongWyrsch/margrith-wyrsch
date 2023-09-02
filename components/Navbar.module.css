@@ -40,7 +40,8 @@
 .navLinks>* { 
     text-decoration: none;
     padding: 0 15px;
-    color: rgb(216, 216, 216);
+    /* color: rgb(216, 216, 216); */
+    color: black;
 }
 .navLinks>*:hover {
     text-decoration: underline;
@@ -64,13 +65,13 @@
     visibility: hidden;
     top: 120%;
     min-width: 130px;
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(84, 84, 84);
     border-radius: 10px;
     padding: 5px 10px;
     text-align: center;
     /* display: none; */
     position: absolute;
-    color: black;
+    color: white;
     font-size: 0.8rem;
 }
 .gmail, .facebook, .instagram {
@@ -81,7 +82,7 @@
 }
 
 .gmail:hover, .facebook:hover, .instagram:hover {
-    background-color: rgb(86, 86, 86);
+    background-color: rgb(173, 171, 171);
 }
 
 .gmail:hover .gmailTooltip,
@@ -103,7 +104,7 @@
 }
 
 .languages > div:nth-child(2) {
-    border-left: 2px solid white;
+    border-left: 2px solid black;
 }
 
 .languages > div:hover {
@@ -113,7 +114,7 @@
 
 .active {
     color: white;
-    background-color: rgb(56, 56, 56);
+    background-color: #61464f;
     border-radius: 20px;
     padding: 0 15px;
 }
