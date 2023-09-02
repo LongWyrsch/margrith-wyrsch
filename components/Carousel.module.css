@@ -39,6 +39,7 @@
 	flex-direction: column;
 	justify-content: center;
 	padding-left: 20px;
+	color: white;
 }
 
 .details > *:nth-child(3) {
